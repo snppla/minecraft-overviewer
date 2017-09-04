@@ -1,6 +1,8 @@
 #!/bin/bash
 set -o errexit
 
+rsync -ra --delete /home/minecraft-out/ /home/minecraft/render/
+
 # Require MINECRAFT_VERSION environment variable to be set (no default assumed)
 if [ -z "$MINECRAFT_VERSION" ]; then
   echo "Expecting environment variable MINECRAFT_VERSION to be set to non-empty string. Exiting."
@@ -21,3 +23,5 @@ if [ "$POI_ONLY" != "y" ]; then
 fi
 
 overviewer.py --config /home/minecraft/config.py --genpoi $OVERVIEWER_PARAMS
+
+rsync -ra --delete /home/minecraft/render/ /home/minecraft-out
