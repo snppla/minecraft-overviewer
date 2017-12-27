@@ -22,6 +22,6 @@ if [ "$POI_ONLY" != "y" ]; then
   fi
 fi
 
-overviewer.py --config /home/minecraft/config.py --genpoi
+overviewer.py --config /home/minecraft/config.py --genpoi $OVERVIEWER_POI_PARAMS
 
 rsync -ra --delete /home/minecraft/render/ /home/minecraft-out

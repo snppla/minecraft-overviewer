@@ -16,7 +16,8 @@ docker run \
   -e MINECRAFT_VERSION=1.11.2 \
   -e GOOGLE_MAPS_API_KEY=<Google Maps API Key> \
   -e POI_ONLY=n \
-  -e OVERVIEWER_PARAMS="--processes 2"\
+  -e OVERVIEWER_PARAMS="--processes 2" \
+  -e $OVERVIEWER_POI_PARAMS="--processes 2" \
   -v /home/user/minecraft/:/home/minecraft/server/:ro \
   -v /srv/http/minecraft/:/home/minecraft/render/:rw \
   mide/minecraft-overviewer:latest
